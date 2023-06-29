@@ -1,0 +1,46 @@
+
+{% extends 'base.html' %}
+{% block 'main' %}
+       <div class="row">
+            <div class="col-md-4 mx-auto shadow p-3" style="margin-top:50px;">
+                <h3 class="mb-3 text-center">User Registration</h3>
+                {% if errmsg %}
+                <div class="alert alert-danger" role="alert">
+                    {{errmsg}}
+                  </div>
+
+                {% endif %}
+
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    
+                    <div class="mb-2">
+                        <label for="one" class="form-label"><strong>Username:</strong></label>
+                        <input type="email" class="form-control" name="umail" id="one" placeholder="Enter Email Address">
+                      </div>
+
+                      <div class="mb-2">
+                        <label for="two" class="form-label"><strong>Mobile:</strong></label>
+                        <input type="number" class="form-control" name="umobile" id="two" placeholder="Enter Mobile Number">
+                      </div>
+
+                      <div class="mb-2">
+                        <label for="three" class="form-label"><strong>Password:</strong></label>
+                        <input type="password" class="form-control" name="upass" id="three" placeholder="Enter Password">
+                      </div>
+
+                      <div class="mb-2">
+                        <label for="four" class="form-label"><strong>Confirmed Password:</strong></label>
+                        <input type="password" class="form-control" name="cpass" id="four" placeholder="Enter Password again">
+                      </div>
+
+                      <div class="mb-2">
+                        <input type="submit" value="Register" class="btn btn-danger">
+                        Already User?&nbsp;&nbsp;<a href="/login" style="text-decoration:none;">Login</a>
+
+                      </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {%  endblock 'main' %}

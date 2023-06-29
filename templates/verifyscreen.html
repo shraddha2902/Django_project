@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block 'main' %}
+    <div class="container"> 
+    <div class="row">
+        <div class="col-md-4 mx-auto shadow p-3" style="margin-top:100px;">
+
+        <h3><strong>Email Verification</h3></strong>
+        <hr>
+        <h5 class="mb-5 text-center">Please check the OTP sent to your email address</h5>
+        
+        <form method="POST" action="/verifyotp/{{user_id}}">
+            {% csrf_token %}
+        <div class="mb-3">
+            <input type="number" class="btn-btn-danger" name="uotp" id="one" placeholder="Enter OTP">
+          </div>
+
+          <div class="mb-3">
+            <input type="submit" value="Verify & continue" class="btn btn-danger">
+        </div>
+        </form>
+    </div>
+</div>
+{% endblock 'main' %}
+
+
